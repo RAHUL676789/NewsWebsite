@@ -5,6 +5,7 @@ import Search from './Search'
 import Pagination from './Pagination'
 import MovingPage from './Storage';
 import CircularProgress from '@mui/material/CircularProgress';
+import Backdrop from '@mui/material/Backdrop';
 
 
 function App() {
@@ -148,8 +149,13 @@ async function APiCall(APi){
     <MovingPage spanData = {state}  nextPage = {newPage}  prePage={previousPage}/>
 
     {state.isLaoding && <h1 className='loader'>
-      Loading...
-      <CircularProgress color="inherit"/>
+      
+      <Backdrop
+        sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}
+        open={open}
+       
+      />
+      <CircularProgress color="inherit" className='spiner'/>
       </h1>}
 
     <Pagination cardData = {state} deleteElement = {deleteElement}/>
