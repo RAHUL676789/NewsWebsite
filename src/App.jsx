@@ -131,7 +131,7 @@ async function APiCall(APi){
   // useEffect function...
 
  useEffect(()=>{
-  APiCall(`http://hn.algolia.com/api/v1/search?query=${state.query}&&page=${state.page}`)
+  APiCall(`https://hn.algolia.com/api/v1/search?query=${state.query}&&page=${state.page}`)
 },[state.query,state.page])
 
 
